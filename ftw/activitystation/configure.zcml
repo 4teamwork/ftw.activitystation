@@ -14,4 +14,11 @@
 
   <include package=".actions" />
 
+  <genericsetup:registerProfile
+      name="default"
+      title="ftw.activitystation"
+      directory="profiles/default"
+      description="Installs the ftw.activitystation package"
+      provides="Products.GenericSetup.interfaces.EXTENSION" />
+
 </configure>

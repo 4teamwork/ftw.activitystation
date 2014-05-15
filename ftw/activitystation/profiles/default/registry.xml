@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<registry>
+    <record name="ftw.activitystation.system_name">
+        <field type="plone.registry.field.TextLine">
+            <title>Activity station system name</title>
+            <description>Will be used as system name in activity station's left side column</description>
+        </field>
+    </record>
+    <record name="ftw.activitystation.url">
+        <field type="plone.registry.field.TextLine">
+            <title>Activity station url</title>
+            <description>The base url of the activity station</description>
+        </field>
+        <value>http://activity.dev</value>
+    </record>
+</registry>

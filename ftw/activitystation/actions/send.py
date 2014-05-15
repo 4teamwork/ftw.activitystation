@@ -7,8 +7,10 @@ from plone.app.contentrules.browser.formhelper import AddForm
 from plone.app.contentrules.browser.formhelper import EditForm
 from plone.contentrules.rule.interfaces import IExecutable
 from plone.contentrules.rule.interfaces import IRuleElementData
+from plone.registry.interfaces import IRegistry
 from zope import schema
 from zope.component import adapts
+from zope.component import getUtility
 from zope.formlib import form
 from zope.interface import implements
 from zope.interface import Interface
@@ -39,10 +41,13 @@ class SendActionExecutor(object):
     implements(IExecutable)
     adapts(Interface, ISendAction, Interface)
 
+    SYSTEM_KEY = 'ftw.activitystation.system_name'
+
     def __init__(self, context, element, event):
         self.context = context
         self.element = element
         self.event = event
+        self.registry = getUtility(IRegistry)
 
     def __call__(self):
         actor = api.user.get_current()
@@ -51,6 +56,9 @@ class SendActionExecutor(object):
         if activity.is_relevant():
             data = activity.get_data()
             data['kind'] = self.element.kind
+            system = self.registry.get(self.SYSTEM_KEY, None)
+            if system:
+                data['system'] = system
             sender.SENDER.post(data)
 
         return True
