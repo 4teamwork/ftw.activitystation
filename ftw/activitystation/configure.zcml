@@ -12,4 +12,6 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include package=".actions" />
+
 </configure>

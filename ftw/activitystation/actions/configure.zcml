@@ -1,0 +1,35 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+    <!-- Delete action (no configurable options) -->
+
+     <adapter factory=".send.SendActionExecutor" />
+
+     <browser:page
+       for="plone.app.contentrules.browser.interfaces.IRuleActionAdding"
+       name="plone.actions.Send"
+       class=".send.SendAddForm"
+       permission="plone.app.contentrules.ManageContentRules"
+       />
+
+     <browser:page
+       for="ftw.activitystation.actions.send.ISendAction"
+       name="edit"
+       class=".send.SendEditForm"
+       permission="plone.app.contentrules.ManageContentRules"
+       />
+
+     <plone:ruleAction
+         name="plone.actions.Send"
+         title="Send activity station notification"
+         description="Send activity station notification"
+         for="*"
+         event="zope.component.interfaces.IObjectEvent"
+         addview="plone.actions.Send"
+         schema=".send.ISendAction"
+         factory=".send.SendAction"
+         />
+
+</configure>
