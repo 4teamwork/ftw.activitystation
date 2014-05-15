@@ -6,7 +6,7 @@
   <conditions/>
   <actions>
    <action type="plone.actions.Send">
-    <property name="event_type">test_event</property>
+    <property name="kind">test_event</property>
    </action>
   </actions>
  </rule>
