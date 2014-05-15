@@ -1,4 +1,7 @@
+from ftw.activitystation import activities
+from ftw.activitystation import sender
 from OFS.SimpleItem import SimpleItem
+from plone import api
 from plone.app.contentrules import PloneMessageFactory as _
 from plone.app.contentrules.browser.formhelper import AddForm
 from plone.app.contentrules.browser.formhelper import EditForm
@@ -14,9 +17,9 @@ from zope.interface import Interface
 class ISendAction(Interface):
     """Interface for the configurable aspects of a send action.
     """
-    event_type = schema.TextLine(title=_(u"type"),
-                                 description=_(u"The event type."),
-                                 required=True)
+    kind = schema.TextLine(title=_(u"Kind"),
+                           description=_(u"The kind of event."),
+                           required=True)
 
 
 class SendAction(SimpleItem):
@@ -24,7 +27,7 @@ class SendAction(SimpleItem):
     """
     implements(ISendAction, IRuleElementData)
 
-    event_type = u''
+    kind = u''
 
     element = 'plone.actions.Send'
     summary = _(u"Send activity station notification")
@@ -42,7 +45,14 @@ class SendActionExecutor(object):
         self.event = event
 
     def __call__(self):
-        import pudb; pudb.set_trace()
+        actor = api.user.get_current()
+        activity = activities.for_event(self.event, actor)
+
+        if activity.is_relevant():
+            data = activity.get_data()
+            data['kind'] = self.element.kind
+            sender.SENDER.post(data)
+
         return True
 
     def error(self, obj, error):
