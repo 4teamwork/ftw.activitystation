@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<contentrules>
+ <rule name="rule-1" title="Foo" description="" enabled="True"
+    event="zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    stop-after="False">
+  <conditions/>
+  <actions>
+   <action type="plone.actions.Send">
+    <property name="event_type">test_event</property>
+   </action>
+  </actions>
+ </rule>
+ <assignment name="rule-1" bubbles="True" enabled="True" location=""/>
+</contentrules>
