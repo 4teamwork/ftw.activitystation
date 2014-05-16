@@ -15,7 +15,8 @@ tests_require = [
 
 setup(name='ftw.activitystation',
       version=version,
-      description="Policy for the City-Guide of the Burgergemeinde Bern",
+      description="Provides an action for plone.app.contentules that allows "
+                  "posting activities to activity station.",
       long_description=(open('README.rst').read() + '\n' +
                         open(os.path.join('docs', 'HISTORY.txt')).read()),
       # Get more strings from
