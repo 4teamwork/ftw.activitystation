@@ -9,7 +9,7 @@
 
      <browser:page
        for="plone.app.contentrules.browser.interfaces.IRuleActionAdding"
-       name="plone.actions.Send"
+       name="ftw.activitystation.actions.Send"
        class=".send.SendAddForm"
        permission="plone.app.contentrules.ManageContentRules"
        />
@@ -22,13 +22,13 @@
        />
 
      <plone:ruleAction
-         name="plone.actions.Send"
+         name="ftw.activitystation.actions.Send"
          title="Send activity station notification"
          description="Send activity station notification"
          for="*"
          editview="edit"
          event="zope.component.interfaces.IObjectEvent"
-         addview="plone.actions.Send"
+         addview="ftw.activitystation.actions.Send"
          schema=".send.ISendAction"
          factory=".send.SendAction"
          />

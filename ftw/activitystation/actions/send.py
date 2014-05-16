@@ -31,7 +31,7 @@ class SendAction(SimpleItem):
 
     kind = u''
 
-    element = 'plone.actions.Send'
+    element = 'ftw.activitystation.actions.Send'
     summary = _(u"Send activity station notification")
 
 

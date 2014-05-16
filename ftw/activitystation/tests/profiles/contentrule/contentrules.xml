@@ -5,7 +5,7 @@
     stop-after="False">
   <conditions/>
   <actions>
-   <action type="plone.actions.Send">
+   <action type="ftw.activitystation.actions.Send">
     <property name="kind">test_event</property>
    </action>
   </actions>
