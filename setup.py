@@ -1,4 +1,6 @@
 from setuptools import setup, find_packages
+import os
+
 
 version = '1.0'
 
@@ -14,13 +16,14 @@ tests_require = [
 setup(name='ftw.activitystation',
       version=version,
       description="Policy for the City-Guide of the Burgergemeinde Bern",
-      long_description=open("README.rst").read(),
+      long_description=(open('README.rst').read() + '\n' +
+                        open(os.path.join('docs', 'HISTORY.txt')).read()),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
-        "Framework :: Plone",
-        "Programming Language :: Python",
-        ],
+          "Framework :: Plone",
+          "Programming Language :: Python",
+      ],
       keywords='',
       author='4teamwork',
       author_email='info@4teamwork.ch',
