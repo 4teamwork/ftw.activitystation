@@ -24,7 +24,7 @@
      <plone:ruleAction
          name="ftw.activitystation.actions.Send"
          title="Send activity station notification"
-         description="Send activity station notification"
+         description="Send a notification for this activity to activity station."
          for="*"
          editview="edit"
          event="zope.component.interfaces.IObjectEvent"

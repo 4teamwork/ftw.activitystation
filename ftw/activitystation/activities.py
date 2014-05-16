@@ -59,6 +59,7 @@ class AbstractActivity(object):
 
 
 class ObjectModifiedActivity(AbstractActivity):
+
     def get_kind(self):
         return "bearbeitet"
 
@@ -68,6 +69,7 @@ class ObjectModifiedActivity(AbstractActivity):
 
 
 class ObjectCreatedActivity(AbstractActivity):
+
     def get_kind(self):
         return "erstellt"
 
@@ -88,18 +90,23 @@ class ObjectDeletedActivity(AbstractActivity):
         info = ILinkIntegrityInfo(request)
         if not info.integrityCheckingEnabled():
             return True
+
         elif info.isConfirmedItem(self.obj):
             return True
 
         if request.URL.endswith('/sl_delete_object'):
             return True
+
         if request.has_key('form.submitted') and \
                 request.URL.endswith('/delete_confirmation'):
             return True
+
         if request.URL.endswith('/folder_delete'):
             return True
+
         if request.has_key('form.button.Cancel'):
             return True
+
         return False
 
     def get_kind(self):

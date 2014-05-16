@@ -1,8 +1,8 @@
+from ftw.activitystation import _
 from ftw.activitystation import activities
 from ftw.activitystation import sender
 from OFS.SimpleItem import SimpleItem
 from plone import api
-from plone.app.contentrules import PloneMessageFactory as _
 from plone.app.contentrules.browser.formhelper import AddForm
 from plone.app.contentrules.browser.formhelper import EditForm
 from plone.contentrules.rule.interfaces import IExecutable
@@ -73,8 +73,8 @@ class SendEditForm(EditForm):
 
     form_fields = form.FormFields(ISendAction)
     label = _(u"Edit Send Action")
-    description = _(u"A send action send events.")
-    form_name = _(u"Configure element")
+    description = _(u"A send action sends activities to activity station.")
+    form_name = _(u"Configure Send Action")
 
 
 class SendAddForm(AddForm):
@@ -83,8 +83,8 @@ class SendAddForm(AddForm):
 
     form_fields = form.FormFields(ISendAction)
     label = _(u"Add Send Action")
-    description = _(u"A send action send events.")
-    form_name = _(u"Configure element")
+    description = _(u"A send action sends activities to activity station.")
+    form_name = _(u"Configure Send Action")
 
     def create(self, data):
         action = SendAction()

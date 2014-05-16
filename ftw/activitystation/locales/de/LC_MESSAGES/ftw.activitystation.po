@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-05-15 14:02+0000\n"
+"POT-Creation-Date: 2014-05-16 07:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,32 +14,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
-#: ./ftw/activitystation/actions/send.py:68
-msgid "A send action send events."
-msgstr ""
+#: ./ftw/activitystation/actions/send.py:76
+msgid "A send action sends activities to activity station."
+msgstr "Diese Atkion verschickt Nachrichten an die Activity-Station."
+
+#: ./ftw/activitystation/actions/send.py:85
+msgid "Add Send Action"
+msgstr "Activity-Station Aktion hinzufügen"
 
 #: ./ftw/activitystation/actions/send.py:77
-msgid "Add Send Action"
-msgstr ""
+msgid "Configure Send Action"
+msgstr "Activity-Station Aktion bearbeiten"
 
-#: ./ftw/activitystation/actions/send.py:69
-msgid "Configure element"
-msgstr ""
-
-#: ./ftw/activitystation/actions/send.py:67
+#: ./ftw/activitystation/actions/send.py:75
 msgid "Edit Send Action"
-msgstr ""
+msgstr "Benachrichtigungs-Akion bearabeiten."
 
-#: ./ftw/activitystation/actions/send.py:20
+#: ./ftw/activitystation/actions/send.py:22
 msgid "Kind"
-msgstr ""
+msgstr "Art"
 
-#: ./ftw/activitystation/actions/send.py:33
+#: ./ftw/activitystation/actions/send.py:35
 msgid "Send activity station notification"
-msgstr ""
+msgstr "Activity-Station Nachricht verschicken."
 
-#: ./ftw/activitystation/actions/send.py:21
+#: ./ftw/activitystation/actions/send.py:23
 msgid "The kind of event."
-msgstr ""
+msgstr "Die Event-Art."
 
 
