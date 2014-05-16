@@ -120,7 +120,7 @@ def for_event(event, actor):
 
 
 mapping = {
-        "ObjectAddedEvent": ObjectCreatedActivity,
-        "ObjectEditedEvent": ObjectModifiedActivity,
-        "ObjectRemovedEvent": ObjectDeletedActivity,
+    "ObjectAddedEvent": ObjectCreatedActivity,
+    "ObjectEditedEvent": ObjectModifiedActivity,
+    "ObjectRemovedEvent": ObjectDeletedActivity,
     }
