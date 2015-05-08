@@ -18,9 +18,9 @@ This package provides two configuration options that can be changed over the Plo
 Links
 -----
 
-- Main github project repository: https://github.com/4teamwork/ftw.activitystation
-- Issue tracker: https://github.com/4teamwork/ftw.activitystation/issues
-- Package on pypi: http://pypi.python.org/pypi/ftw.activitystation
+- Github: https://github.com/4teamwork/ftw.activitystation
+- Issues: https://github.com/4teamwork/ftw.activitystation/issues
+- Pypi: http://pypi.python.org/pypi/ftw.activitystation
 - Continuous integration: https://jenkins.4teamwork.ch/search?q=ftw.activitystation
 
 
